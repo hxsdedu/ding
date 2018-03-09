@@ -26,15 +26,5 @@
             "HXSD\\Ding\\":"src/"
         }
     },
-    "autoload-dev": {},
-    "extra": {
-        "laravel": {
-            "providers": [
-                "HXSD\\Ding\\Providers\\DingProvider"
-            ],
-            "aliases": {
-                "Ding": "HXSD\\Ding\\Facades\\Ding::class"
-            }
-        }
-    }
+    "autoload-dev": {}
 }
