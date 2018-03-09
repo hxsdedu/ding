@@ -3,7 +3,7 @@
     "description": "ding ding laravel package",
     "license": "MIT",
     "keywords": ["xiewh", "laravel", "ding", "ding ding"],
-    "homepage": "https://github.com/itxwh/ding",
+    "homepage": "https://github.com/hxsdedu/ding",
     "minimum-stability": "dev",
     "authors": [
         {
@@ -14,6 +14,7 @@
     ],
     "require": {
         "php": ">=7.0.0",
+        "laravel/framework": "~5.5",
         "php-curl-class/php-curl-class": "^8.0"
     },
     "require-dev": {},
@@ -25,5 +26,15 @@
             "HXSD\\Ding\\":"packages/HXSD/ding/src"
         }
     },
-    "autoload-dev": {}
+    "autoload-dev": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HXSD\\Ding\\Providers\\DingProvider"
+            ],
+            "aliases": {
+                "Ding": "HXSD\\Ding\\Facades\\Ding::class"
+            }
+        }
+    }
 }

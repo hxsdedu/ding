@@ -28,7 +28,10 @@ class DingProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        // 确定应用程序是否在控制台中运行
+        if ($this->app->runningInConsole()) {
+            $this->publishes([__DIR__.'/../../config' => config_path()], 'ding');
+        }
     }
 
     /**
