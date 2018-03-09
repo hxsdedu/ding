@@ -17,6 +17,9 @@ class ResponseParams
     ];
 
     const DEPARTMENT = [
-        'get_department_ids' => 'sub_dept_id_list'
+        'get_department_ids' => 'sub_dept_id_list',
+        'get_department_list' => 'department',
+        'get_department_info' => null,
+        'get_all_parent_daepartment' => 'parentIds',
     ];
 }

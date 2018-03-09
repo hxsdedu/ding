@@ -36,7 +36,7 @@ abstract class BaseMethod extends BaseDing
             $response = $response->$responseKey;
         }
 
-        return $response;
+        return (array)$response;
     }
 
     /**

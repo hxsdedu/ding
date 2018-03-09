@@ -14,7 +14,7 @@ use HXSD\Ding\Constant\RequestParams;
 use HXSD\Ding\Constant\ResponseParams;
 use HXSD\Ding\Foundation\BaseMethod;
 
-class ListIds extends BaseMethod
+class Ids extends BaseMethod
 {
     public function execute(array $params)
     {

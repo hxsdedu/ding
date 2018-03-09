@@ -16,6 +16,4 @@ use HXSD\Ding\Methods\Tools;
 class Ding extends BaseDing
 {
     use Method;
-
-
 }

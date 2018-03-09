@@ -36,5 +36,17 @@ class Request
 
         // 获取部门详情
         'info' => 'department/get',
+
+        // 创建部门
+        'create' => 'department/create',
+
+        // 更新部门
+        'update' => 'department/update',
+
+        // 删除部门
+        'delete' => 'department/delete',
+
+        // 查询部门的所有上级父部门路径
+        'all_parent' => 'department/list_parent_depts_by_dept'
     ];
 }
