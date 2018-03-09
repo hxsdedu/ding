@@ -23,7 +23,7 @@
             "src/helpers.php"
         ],
         "psr-4": {
-            "HXSD\\Ding\\":"packages/HXSD/ding/src"
+            "HXSD\\Ding\\":"src/"
         }
     },
     "autoload-dev": {},
