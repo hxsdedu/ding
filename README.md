@@ -32,3 +32,19 @@ php artisan vendor:publish --provider="HXSD\Ding\Providers\DingProvider"
 
 ## Configurations
 The file config/ding.php contains an array of configurations, you can find the default configurations in there.
+
+```php
+'auth_info' => [
+    // ding CorpId
+    'corp_id' => '',
+
+    // Company secret key
+    'corp_secret' => '',
+
+    // sso secret key
+    'sso_secret' => '',
+
+    // channel secret key
+    'channel_secret' => '',
+],
+```
