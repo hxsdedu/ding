@@ -1,4 +1,4 @@
-# ding
+# ding ding laravel sdk
 
 ## Requirements
 - PHP >= 7.0.0
