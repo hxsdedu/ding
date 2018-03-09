@@ -61,4 +61,14 @@ class RequestParams
 
         'get_all_parent_daepartment' => 'id'
     ];
+
+    const USERS = [
+        'get_user_simple_list' => [
+            'department_id' => 'department_id',
+            'offset' => 'offset',
+            'size' => 'size',
+            'order' => 'order',
+            'lang' => 'lang',
+        ],
+    ];
 }

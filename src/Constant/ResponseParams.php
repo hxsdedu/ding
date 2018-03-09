@@ -22,4 +22,8 @@ class ResponseParams
         'get_department_info' => null,
         'get_all_parent_daepartment' => 'parentIds',
     ];
+
+    const USERS = [
+        'get_user_simple_list' => 'userlist',
+    ];
 }

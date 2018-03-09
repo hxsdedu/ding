@@ -47,6 +47,11 @@ class Request
         'delete' => 'department/delete',
 
         // 查询部门的所有上级父部门路径
-        'all_parent' => 'department/list_parent_depts_by_dept'
+        'all_parent' => 'department/list_parent_depts_by_dept',
+    ];
+
+    const PATH_USERS = [
+        'simple_list' => 'user/simplelist',
+        'details_list' => 'user/list'
     ];
 }

@@ -18,6 +18,8 @@ use HXSD\Ding\Methods\Department\Ids;
 use HXSD\Ding\Methods\Department\Info;
 use HXSD\Ding\Methods\Department\Lists;
 use HXSD\Ding\Methods\Department\Update;
+use HXSD\Ding\Methods\Users\DetailsList;
+use HXSD\Ding\Methods\Users\SimpleList;
 
 trait Method
 {
@@ -184,5 +186,49 @@ trait Method
             RequestParams::DEPARTMENT['get_all_parent_daepartment'] => $id
         ]);
     }
+
+    /**
+     * 获取部门成员
+     *
+     * @param int $departmentId
+     * @param string $order
+     * @param int $size
+     * @param int $offset
+     * @param string $lang
+     * @return mixed
+     */
+    public function getUserSimpleList(int $departmentId, string $order = 'entry_asc', int $size = 30, $offset = 0, string $lang = 'zh_CN')
+    {
+        return app(SimpleList::class)->execute([
+            RequestParams::USERS['get_user_simple_list']['department_id'] => $departmentId,
+            RequestParams::USERS['get_user_simple_list']['order'] => $order,
+            RequestParams::USERS['get_user_simple_list']['size'] => $size,
+            RequestParams::USERS['get_user_simple_list']['offset'] => $offset,
+            RequestParams::USERS['get_user_simple_list']['lang'] => $lang,
+        ]);
+    }
+
+    /**
+     * 获取部门成员 (详情)
+     *
+     * @param int $departmentId
+     * @param string $order
+     * @param int $size
+     * @param int $offset
+     * @param string $lang
+     * @return mixed
+     */
+    public function getUserDetailsList(int $departmentId, string $order = 'entry_asc', int $size = 30, $offset = 0, string $lang = 'zh_CN')
+    {
+        return app(DetailsList::class)->execute([
+            RequestParams::USERS['get_user_simple_list']['department_id'] => $departmentId,
+            RequestParams::USERS['get_user_simple_list']['order'] => $order,
+            RequestParams::USERS['get_user_simple_list']['size'] => $size,
+            RequestParams::USERS['get_user_simple_list']['offset'] => $offset,
+            RequestParams::USERS['get_user_simple_list']['lang'] => $lang,
+        ]);
+    }
+
+
 
 }

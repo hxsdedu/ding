@@ -36,7 +36,11 @@ abstract class BaseMethod extends BaseDing
             $response = $response->$responseKey;
         }
 
-        return (array)$response;
+        if (is_string($response) === false) {
+            $response = (array)$response;
+        }
+
+        return $response;
     }
 
     /**
