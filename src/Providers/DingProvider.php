@@ -9,6 +9,8 @@
 namespace HXSD\Ding\Providers;
 
 
+use HXSD\Ding\Callback\Event;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use HXSD\Ding\Ding;
 
@@ -31,6 +33,13 @@ class DingProvider extends ServiceProvider
         // 确定应用程序是否在控制台中运行
         if ($this->app->runningInConsole()) {
             $this->publishes([__DIR__.'/../../config' => config_path()], 'ding');
+        }
+
+        // 钉钉回调路由
+        if ($callbackRoute = config('ding.callback.route')) {
+            Route::post($callbackRoute, function () {
+                return app(Event::class)->execute();
+            });
         }
     }
 

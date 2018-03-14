@@ -25,4 +25,29 @@ return [
         // 服务窗应用
         'channel_secret' => '',
     ],
+
+    /**
+     * 钉钉事件回调配置
+     */
+    'callback' => [
+        /**
+         * 钉钉事件回调配置
+         */
+        'callback' => [
+            // 回调路径
+            'route' => '',
+            // 加解密需要用到的token，普通企业可以随机填写
+            'token' => '',
+            // 数据加密密钥。用于回调数据的加密，长度固定为43个字符
+            'aes_key' => '',
+            // 普通企业此参数为 corp_id
+            'suite_key' => '',
+            // 创建套件时检测回调地址有效性，使用 create_suite_key 作为 suite_key
+            'create_suite_key' => '',
+            // 事件操作
+            'event' => [
+
+            ],
+        ],
+    ],
 ];
