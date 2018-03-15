@@ -14,7 +14,7 @@ class Event
     const CHECK_CREATE_SUITE_URL = 'check_create_suite_url';
 
     const EVENT_TYPE = [
-        'check_url' => '\HXSD\Ding\Callback\Event\CheckUrl@index'
+        'check_url' => '\HXSD\Ding\Methods\Callback\Event\CheckUrl@index'
     ];
 
 

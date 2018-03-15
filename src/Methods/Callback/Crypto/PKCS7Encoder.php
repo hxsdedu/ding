@@ -6,7 +6,7 @@
  * Time: 下午3:29
  */
 
-namespace HXSD\Ding\Callback\Crypto;
+namespace HXSD\Ding\Methods\Callback\Crypto;
 
 
 class PKCS7Encoder

@@ -9,7 +9,7 @@
 namespace HXSD\Ding\Providers;
 
 
-use HXSD\Ding\Callback\Event;
+use HXSD\Ding\Methods\Callback\Event;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use HXSD\Ding\Ding;

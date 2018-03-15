@@ -6,7 +6,7 @@
  * Time: 下午2:22
  */
 
-namespace HXSD\Ding\Callback\Event;
+namespace HXSD\Ding\Methods\Callback\Event;
 
 
 class CheckUrl

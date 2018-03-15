@@ -6,7 +6,7 @@
  * Time: 下午3:26
  */
 
-namespace HXSD\Ding\Callback\Crypto;
+namespace HXSD\Ding\Methods\Callback\Crypto;
 
 
 class Prpcrypt

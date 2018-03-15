@@ -6,11 +6,11 @@
  * Time: 下午5:12
  */
 
-namespace HXSD\Ding\Callback;
+namespace HXSD\Ding\Methods\Callback;
 
 
-use HXSD\Ding\Callback\Crypto\DingtalkCrypt;
-use HXSD\Ding\Callback\Crypto\ErrorCode;
+use HXSD\Ding\Methods\Callback\Crypto\DingtalkCrypt;
+use HXSD\Ding\Methods\Callback\Crypto\ErrorCode;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 use HXSD\Ding\Constant\Event as EventType;
