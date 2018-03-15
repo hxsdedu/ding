@@ -26,10 +26,5 @@
             "HXSD\\Ding\\":"src/"
         }
     },
-    "autoload-dev": {},
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.0.3-dev"
-        }
-    }
+    "autoload-dev": {}
 }
