@@ -38,8 +38,8 @@ class DingProvider extends ServiceProvider
         // 钉钉回调路由
         if ($callbackRoute = config('ding.callback.route')) {
             Route::post($callbackRoute, function () {
-                return app(Event::class)->execute();
-            });
+                return app(Event::class)->execute([]);
+            })->name('ding_callback');
         }
     }
 

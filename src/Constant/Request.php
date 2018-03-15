@@ -50,8 +50,17 @@ class Request
         'all_parent' => 'department/list_parent_depts_by_dept',
     ];
 
+    // 钉钉用户相关请求路径
     const PATH_USERS = [
         'simple_list' => 'user/simplelist',
         'details_list' => 'user/list'
+    ];
+
+    const PATH_CALLBACK = [
+        'get_callback' => 'call_back/get_call_back',
+        'register_callback' => 'call_back/register_call_back',
+        'update_callback' => 'call_back/update_call_back',
+        'delete_callback' => 'call_back/delete_call_back',
+        'get_callback_failed_result' => 'call_back/get_call_back_failed_result',
     ];
 }

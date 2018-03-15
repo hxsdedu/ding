@@ -11,6 +11,10 @@ namespace HXSD\Ding\Methods;
 
 use HXSD\Ding\Constant\RequestParams;
 use HXSD\Ding\Methods\Auth\AccessToken;
+use HXSD\Ding\Methods\Callback\CallbackFailedResult;
+use HXSD\Ding\Methods\Callback\DeleteCallback;
+use HXSD\Ding\Methods\Callback\EventCallback;
+use HXSD\Ding\Methods\Callback\RegisterCallback;
 use HXSD\Ding\Methods\Department\AllParent;
 use HXSD\Ding\Methods\Department\Create;
 use HXSD\Ding\Methods\Department\Delete;
@@ -227,6 +231,46 @@ trait Method
             RequestParams::USERS['get_user_simple_list']['offset'] => $offset,
             RequestParams::USERS['get_user_simple_list']['lang'] => $lang,
         ]);
+    }
+
+    /**
+     * 根据配置设置回调
+     *
+     * @return mixed
+     */
+    public function registerCallback()
+    {
+        return app(RegisterCallback::class)->execute([]);
+    }
+
+    /**
+     * 获取配置回调设置信息
+     *
+     * @return mixed
+     */
+    public function getCallback()
+    {
+        return app(EventCallback::class)->execute([]);
+    }
+
+    /**
+     * 删除回调
+     *
+     * @return mixed
+     */
+    public function deleteCallback()
+    {
+        return app(DeleteCallback::class)->execute([]);
+    }
+
+    /**
+     * 获取回调失败信息
+     *
+     * @return mixed
+     */
+    public function getCallbackFailedResult()
+    {
+        return app(CallbackFailedResult::class)->execute([]);
     }
 
 

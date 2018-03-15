@@ -9,13 +9,14 @@
 namespace HXSD\Ding\Methods\Callback;
 
 
+use HXSD\Ding\Methods\Callback\Base\BaseCallback;
 use HXSD\Ding\Methods\Callback\Crypto\DingtalkCrypt;
 use HXSD\Ding\Methods\Callback\Crypto\ErrorCode;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 use HXSD\Ding\Constant\Event as EventType;
 
-class Event
+class Event extends BaseCallback
 {
     /**
      * 请求参数
@@ -23,34 +24,6 @@ class Event
      * @var array
      */
     protected $requestParms;
-
-    /**
-     * 加解密需要用到的token
-     *
-     * @var string
-     */
-    protected $token;
-
-    /**
-     * 数据加密密钥。用于回调数据的加密，长度固定为43个字符
-     *
-     * @var string
-     */
-    protected $encodingAesKey;
-
-    /**
-     * 普通企业此参数为 corp_id
-     *
-     * @var string
-     */
-    protected $suiteKey;
-
-    /**
-     * 创建套件时检测回调地址有效性，使用 create_suite_key 作为 suite_key
-     *
-     * @var string
-     */
-    protected $createSuiteKey;
 
     protected $eventTypes;
 
@@ -63,9 +36,9 @@ class Event
      */
     public function __construct()
     {
-        // 加载配置
-        $this->initConfig();
+        parent::initConfig();
 
+        // 实例化加解密类
         $this->instanceDingtalkCrypt($this->suiteKey);
 
         // 加载事件回调类型
@@ -78,10 +51,10 @@ class Event
     /**
      * 钉钉回调入口方法
      *
-     * @return string
+     * @return array
      * @throws \Exception
      */
-    public function execute()
+    public function execute(array $params)
     {
         $decrypt = Request::get('decrypt', []);
         if (isset($decrypt['EventType']) === false) {
@@ -184,19 +157,6 @@ class Event
         } catch (\Exception $exception) {
             throw new \Exception('callback configuration error');
         }
-    }
-
-    /**
-     * 加载配置参数
-     */
-    protected function initConfig()
-    {
-        $this->token = config('ding.callback.token');
-        $this->encodingAesKey = config('ding.callback.aes_key');
-        $this->suiteKey = empty(config('ding.callback.suite_key'))
-            ? config('ding.auth_info.corp_id')
-            : config('ding.callback.suite_key') ;
-        $this->createSuiteKey = config('ding.callback.create_suite_key');
     }
 
     /**

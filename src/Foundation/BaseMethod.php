@@ -26,8 +26,8 @@ abstract class BaseMethod extends BaseDing
     {
         if (($response = $callback())->errcode != 0) {
             throw new \Exception(
-                '钉钉 Api 接口请求异常，error_code: '
-                . $response->errcode .' error_msg: '
+                '钉钉 Api 接口请求异常，error_code:'
+                . $response->errcode .' error_msg:'
                 .$response->errmsg
             );
         }
